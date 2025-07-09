@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🖼️ Image Converter</title>
+  <meta name="description" content="Convert PNG, JPG, WebP images instantly. Drag & drop or upload. No server, no wait." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>🖼️ Image Converter</h1>
+    <p>Convert PNG, JPG, WebP images instantly. Just upload or drag and drop.</p>
+
+    <div id="dropZone" class="drop-zone">
+      <p id="dropText">📂 Drag & Drop or Click to Upload</p>
+      <img id="previewImage" src="" alt="Preview" style="display:none;" />
+      <input type="file" id="imageInput" accept="image/*" hidden />
+    </div>    
+
+    <label for="formatSelect">Convert to:</label>
+    <select id="formatSelect">
+      <option value="image/jpeg">JPG</option>
+      <option value="image/png">PNG</option>
+      <option value="image/webp">WebP</option>
+      <option value="avif">AVIF</option>    
+      <option value="tiff">TIFF</option>
+    </select>
+
+    <a id="downloadLink" style="display:none;" download>⬇️ Download Converted Image</a>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
