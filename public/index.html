@@ -3,10 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>🖼️ Image Converter</title>
-  <meta name="description" content="Convert PNG, JPG, WebP images instantly. Drag & drop or upload. No server, no wait." />
+  <title>Online Image Converter – Convert JPG, PNG, WebP, AVIF, TIFF</title>
+  <meta name="description" content="Free online image converter. Instantly convert images to JPG, PNG, WebP, AVIF or TIFF. No signup, drag and drop supported." />
+  <meta name="keywords" content="image converter, convert to jpg, png, webp, avif, tiff, drag and drop, online image tool" />
+
   <link rel="stylesheet" href="styles.css" />
 </head>
+
+<footer style="text-align:center; margin-top:40px; font-size: 14px;">
+  <a href="privacy.html">Privacy Policy</a>
+</footer>
+
 <body>
   <div class="container">
     <h1>🖼️ Image Converter</h1>
@@ -27,9 +34,15 @@
       <option value="tiff">TIFF</option>
     </select>
 
+    <div id="adPlaceholder" style="margin: 20px 0; padding: 15px; border: 1px dashed #aaa; text-align: center;">
+      <strong>🔒 Ad Placeholder</strong><br>
+      Your ad will appear here once approved by Google.
+    </div>    
+
     <a id="downloadLink" style="display:none;" download>⬇️ Download Converted Image</a>
   </div>
 
   <script src="script.js"></script>
 </body>
+
 </html>
