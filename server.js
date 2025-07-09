@@ -33,10 +33,12 @@ app.post("/convert", upload.single("image"), async (req, res) => {
       .toFormat(targetFormat)
       .toFile(outputPath);
 
-    res.download(outputPath, outputFilename, () => {
-      fs.unlinkSync(inputPath);
-      fs.unlinkSync(outputPath);
-    });
+      res.setHeader("Access-Control-Allow-Origin", "*");
+      res.setHeader("Content-Disposition", `attachment; filename="${outputFilename}"`);
+      res.sendFile(path.resolve(outputPath), () => {
+        fs.unlinkSync(inputPath);
+        fs.unlinkSync(outputPath);
+      });
   } catch (err) {
     console.error("Conversion error:", err);
     res.status(500).send("Conversion failed.");
