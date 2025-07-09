@@ -7,12 +7,20 @@ const fs = require("fs");
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+const outputDir = path.join(__dirname, "output");
+if (!fs.existsSync(outputDir)) {
+  fs.mkdirSync(outputDir);
+}
+
+// Setup Multer for file uploads
 const upload = multer({ dest: "uploads/" });
 
-app.use(express.static("public")); // your frontend lives here
+// Static files (optional)
+app.use(express.static("public"));
 
+// POST /convert?format=jpg|png|webp|avif|tiff
 app.post("/convert", upload.single("image"), async (req, res) => {
-  const targetFormat = req.query.format; // jpg, png, webp, avif, tiff, etc.
+  const targetFormat = req.query.format;
   const inputPath = req.file.path;
   const outputFilename = `converted-${Date.now()}.${targetFormat}`;
   const outputPath = path.join("output", outputFilename);
@@ -23,15 +31,15 @@ app.post("/convert", upload.single("image"), async (req, res) => {
       .toFile(outputPath);
 
     res.download(outputPath, outputFilename, () => {
-      fs.unlinkSync(inputPath); // delete temp input
-      fs.unlinkSync(outputPath); // delete temp output
+      fs.unlinkSync(inputPath);
+      fs.unlinkSync(outputPath);
     });
   } catch (err) {
-    console.error("Error during conversion:", err);
+    console.error("Conversion error:", err);
     res.status(500).send("Conversion failed.");
   }
 });
 
 app.listen(PORT, () => {
-  console.log(`🚀 Server running at http://localhost:${PORT}`);
+  console.log(`🚀 Server running on http://localhost:${PORT}`);
 });
