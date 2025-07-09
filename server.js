@@ -1,4 +1,5 @@
 const express = require("express");
+const cors = require("cors");
 const multer = require("multer");
 const sharp = require("sharp");
 const path = require("path");
@@ -6,6 +7,8 @@ const fs = require("fs");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+
+app.use(cors());
 
 const outputDir = path.join(__dirname, "output");
 if (!fs.existsSync(outputDir)) {
@@ -39,7 +42,6 @@ app.post("/convert", upload.single("image"), async (req, res) => {
     res.status(500).send("Conversion failed.");
   }
 });
-
 app.listen(PORT, () => {
   console.log(`🚀 Server running on http://localhost:${PORT}`);
 });
