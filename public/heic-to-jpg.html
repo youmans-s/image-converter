@@ -9,6 +9,20 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-GCEWJYF06R"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-GCEWJYF06R');</script>
   <link rel="stylesheet" href="/styles.css"/>
+
+  <!-- FAQ JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {"@type":"Question","name":"What is a HEIC file?","acceptedAnswer":{"@type":"Answer","text":"HEIC is the default iPhone photo format. Many tools prefer JPG, which is widely compatible."}},
+      {"@type":"Question","name":"Do you store my photos?","acceptedAnswer":{"@type":"Answer","text":"No. Images are processed only for conversion and are not kept after the response."}},
+      {"@type":"Question","name":"Will the JPG be lower quality?","acceptedAnswer":{"@type":"Answer","text":"JPG is lossy, but we use a balanced quality setting to keep images clear while reducing size."}},
+      {"@type":"Question","name":"Is EXIF metadata kept?","acceptedAnswer":{"@type":"Answer","text":"Metadata may be removed during conversion in this basic tool."}}
+    ]
+  }
+  </script>
 </head>
 <body>
   <header class="topbar"><div class="wrap">
@@ -31,12 +45,24 @@
     </div>
 
     <div id="out" class="results"></div>
-    <div class="ad-placeholder">Your ad will appear here once approved.</div>
 
-    <section class="card" style="margin-top:16px">
-      <h3>Why convert HEIC to JPG?</h3>
-      <p>HEIC is the default on newer iPhones. JPG works everywhere: older browsers, Windows apps, messaging tools, and many websites.</p>
+    <section class="card" style="margin-top:16px;text-align:left">
+      <h2>HEIC → JPG help</h2>
+      <details><summary>What is HEIC?</summary>
+        <p>It’s the default photo format on newer iPhones. Many apps and sites still prefer JPG.</p>
+      </details>
+      <details><summary>Do you keep my photos?</summary>
+        <p>No. We convert and return the JPG without retaining the original or result after processing.</p>
+      </details>
+      <details><summary>Will quality drop?</summary>
+        <p>JPG is lossy, but we use a sensible quality setting for a good balance of size and clarity.</p>
+      </details>
+      <details><summary>Is EXIF metadata kept?</summary>
+        <p>In this simple converter, metadata may be stripped during conversion.</p>
+      </details>
     </section>
+
+    <div class="ad-placeholder">Your ad will appear here once approved.</div>
   </div>
 
   <footer class="sitefoot"><div class="wrap">

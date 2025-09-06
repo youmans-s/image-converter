@@ -1,39 +1,29 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Free Image Converter Tool – Convert JPG, PNG, WebP, AVIF, HEIC, TIFF</title>
+  <meta name="description" content="Fast, free image tools: convert, compress, resize, and HEIC to JPG. Private by design."/>
+  <link rel="canonical" href="https://www.freeimageconvertertool.com/"/>
 
+  <!-- AdSense + GA -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1927574634957205" crossorigin="anonymous"></script>
-
-  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-GCEWJYF06R"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-GCEWJYF06R');</script>
 
-    gtag('config', 'G-GCEWJYF06R');
-  </script>
-
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Free Image Converter Tool - Convert JPG, PNG, WebP, AVIF, HEIC, TIFF Online</title>
-  <meta name="description" content="Convert images online instantly with Free Image Converter Tool. Supports JPG, PNG, WebP, AVIF, HEIC, TIFF and more. 100% free and fast!" />
-  <meta name="keywords" content="free image converter, online image converter, convert jpg to png, convert png to webp, heic to jpg, avif to jpg, tiff converter, sharp image converter" />
-
-  <meta property="og:title" content="Free Image Converter Tool" />
-  <meta property="og:description" content="Convert images like JPG, PNG, WebP, AVIF, HEIC, TIFF online for free." />
-  <meta property="og:url" content="https://www.freeimageconvertertool.com" />
-  <meta property="og:type" content="website" />
-
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="canonical" href="https://www.freeimageconvertertool.com" />
+  <link rel="stylesheet" href="/styles.css"/>
 </head>
-
 <body>
   <header class="topbar">
     <div class="wrap">
-      <a class="brand" href="/">Free Image Converter Tool</a>
+      <a class="brand" href="/">
+        <!-- Optional logo -->
+        <!-- <img src="/logo.svg" alt="" class="logo"> -->
+        Free Image Converter Tool
+      </a>
       <nav class="nav">
+        <a href="/" class="cta" aria-current="page">Image Converter</a>
         <a href="/compress.html">Compress</a>
         <a href="/resize.html">Resize</a>
         <a href="/heic-to-jpg.html">HEIC → JPG</a>
@@ -42,6 +32,38 @@
         <a href="/contact.html">Contact</a>
       </nav>
     </div>
+  </header>
+
+  <!-- 2×2 “quadrants” -->
+  <section class="section">
+    <h2 class="visually-hidden">Tools</h2>
+    <div class="tool-grid">
+      <a class="tool-card" href="/">
+        <span class="tool-emoji" aria-hidden="true">🖼️</span>
+        <h3>Image Converter</h3>
+        <p>Convert JPG, PNG, WebP, AVIF.</p>
+      </a>
+      <a class="tool-card" href="/compress.html">
+        <span class="tool-emoji" aria-hidden="true">🗜️</span>
+        <h3>Compress</h3>
+        <p>Shrink images while keeping quality.</p>
+      </a>
+      <a class="tool-card" href="/resize.html">
+        <span class="tool-emoji" aria-hidden="true">📏</span>
+        <h3>Resize</h3>
+        <p>Exact width/height or keep ratio.</p>
+      </a>
+      <a class="tool-card" href="/heic-to-jpg.html">
+        <span class="tool-emoji" aria-hidden="true">📱</span>
+        <h3>HEIC → JPG</h3>
+        <p>iPhone photos to JPG in one step.</p>
+      </a>
+    </div>
+  </section>
+
+  <div class="ad-placeholder">Your ad will appear here once approved.</div>
+
+  <!-- Main converter UI -->
   <div class="container">
     <h1>🖼️ Image Converter</h1>
     <p>Convert PNG, JPG, WebP images instantly. Just upload or drag and drop.</p>
@@ -50,21 +72,18 @@
       <p id="dropText">📂 Drag & Drop or Click to Upload</p>
       <img id="previewImage" src="" alt="Preview" style="display:none;" />
       <input type="file" id="imageInput" accept="image/*" hidden />
-    </div>    
+    </div>
 
     <label for="formatSelect">Convert to:</label>
     <select id="formatSelect">
       <option value="image/jpeg">JPG</option>
       <option value="image/png">PNG</option>
       <option value="image/webp">WebP</option>
-      <option value="avif">AVIF</option>    
+      <option value="avif">AVIF</option>
       <option value="tiff">TIFF</option>
     </select>
 
-    <div id="adPlaceholder" style="margin: 20px 0; padding: 15px; border: 1px dashed #aaa; text-align: center;">
-      <strong>🔒 Ad Placeholder</strong><br>
-      Your ad will appear here once approved by Google.
-    </div>    
+    <div class="ad-placeholder" style="margin-top:16px">Your ad will appear here once approved by Google.</div>
 
     <a id="downloadLink" style="display:none;" download>⬇️ Download Converted Image</a>
   </div>
@@ -79,9 +98,21 @@
       </nav>
     </div>
   </footer>
-  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
-  <script src="script.js"></script>
+
+  <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+  <script src="/script.js"></script>
+
+  <!-- Home FAQ (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {"@type":"Question","name":"Are my images uploaded?","acceptedAnswer":{"@type":"Answer","text":"Most conversions run in your browser. HEIC/TIFF may be sent to our server only for conversion and are not retained after processing."}},
+      {"@type":"Question","name":"What formats can I convert?","acceptedAnswer":{"@type":"Answer","text":"JPG, PNG, WebP, and AVIF. Availability depends on your browser’s export support."}},
+      {"@type":"Question","name":"Is this free?","acceptedAnswer":{"@type":"Answer","text":"Yes—ads support hosting so the tools can stay free."}}
+    ]
+  }
+  </script>
 </body>
-
-
 </html>

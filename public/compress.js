@@ -53,7 +53,7 @@ async function handle(files){
       const outName = file.name.replace(/\.[^.]+$/, "") + "." + ext(outMime);
       row.innerHTML = `
         <h3>${file.name} → ${outName}</h3>
-        <img class="preview" src="${url}" alt="Preview"/>
+        <img class="preview" loading="lazy" src="${url}" alt="Preview"/>
         <div class="meta">${Math.round(blob.size/1024)} KB</div>
         <p><a download="${outName}" href="${url}">Download</a></p>
       `;

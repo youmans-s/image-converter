@@ -49,6 +49,7 @@ function handleConversion(file) {
   reader.onload = function (e) {
     previewImage.src = e.target.result;
     previewImage.style.display = "block";
+    previewImage.loading = "lazy";
     dropText.style.display = "none";
   };
   reader.readAsDataURL(file);
@@ -67,6 +68,7 @@ function handleConversion(file) {
     body: formData
   })
     .then((res) => {
+      if (typeof gtag === "function") gtag('event','conversion_done',{ feature:'convert', format });
       if (!res.ok) throw new Error("Conversion failed");
       return res.blob();
     })

@@ -6,11 +6,24 @@
   <title>Compress Images Online – JPG/PNG/WebP</title>
   <meta name="description" content="Compress images quickly in your browser. Reduce file size with quality and max width/height controls. Free and private."/>
   <link rel="canonical" href="https://www.freeimageconvertertool.com/compress.html"/>
-  <!-- AdSense + GA (same as index) -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1927574634957205" crossorigin="anonymous"></script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-GCEWJYF06R"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-GCEWJYF06R');</script>
   <link rel="stylesheet" href="/styles.css"/>
+
+  <!-- FAQ JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {"@type":"Question","name":"What does the Quality slider do?","acceptedAnswer":{"@type":"Answer","text":"It adjusts lossy compression for JPG/WebP. PNG ignores quality and stays lossless."}},
+      {"@type":"Question","name":"Will dimensions change when compressing?","acceptedAnswer":{"@type":"Answer","text":"Only if you set a Max width or height; otherwise the original pixel size is kept."}},
+      {"@type":"Question","name":"Which format makes the smallest files?","acceptedAnswer":{"@type":"Answer","text":"WebP usually produces much smaller files than JPG or PNG while keeping good visual quality."}},
+      {"@type":"Question","name":"Are my images stored?","acceptedAnswer":{"@type":"Answer","text":"No. Browser‑capable formats are processed locally; unsupported formats are converted on the server and not retained."}}
+    ]
+  }
+  </script>
 </head>
 <body>
   <header class="topbar"><div class="wrap">
@@ -55,6 +68,22 @@
     </div>
 
     <div id="list" class="results"></div>
+
+    <section class="card" style="margin-top:16px;text-align:left">
+      <h2>Compression help</h2>
+      <details><summary>What does “Quality” do?</summary>
+        <p>It controls lossy compression for JPG/WebP (lower = smaller file, more loss). PNG ignores quality and stays lossless.</p>
+      </details>
+      <details><summary>Will the image dimensions change?</summary>
+        <p>Only if you set Max width/height. Otherwise the original size is kept.</p>
+      </details>
+      <details><summary>Best format to shrink a PNG?</summary>
+        <p>Try WebP—often 30–70% smaller than PNG for photos and many graphics.</p>
+      </details>
+      <details><summary>Are files stored?</summary>
+        <p>No. Browser‑capable formats stay local; HEIC/TIFF are converted on our server and not retained after the response.</p>
+      </details>
+    </section>
 
     <div id="adPlaceholder" class="ad-placeholder">Your ad will appear here once approved.</div>
   </div>
