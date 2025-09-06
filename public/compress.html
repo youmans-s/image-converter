@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Compress Images Online – JPG/PNG/WebP</title>
+  <meta name="description" content="Compress images quickly in your browser. Reduce file size with quality and max width/height controls. Free and private."/>
+  <link rel="canonical" href="https://www.freeimageconvertertool.com/compress.html"/>
+  <!-- AdSense + GA (same as index) -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1927574634957205" crossorigin="anonymous"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GCEWJYF06R"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-GCEWJYF06R');</script>
+  <link rel="stylesheet" href="/styles.css"/>
+</head>
+<body>
+  <header class="topbar"><div class="wrap">
+    <a class="brand" href="/">Free Image Converter Tool</a>
+    <nav class="nav">
+      <a href="/compress.html" aria-current="page">Compress</a>
+      <a href="/resize.html">Resize</a>
+      <a href="/heic-to-jpg.html">HEIC → JPG</a>
+      <a href="/privacy.html">Privacy</a>
+    </nav>
+  </div></header>
+
+  <div class="container">
+    <h1>🗜️ Compress Images</h1>
+    <p>Reduce file size while keeping quality. PNG/JPG/WebP are processed in your browser. HEIC/TIFF fall back to our converter.</p>
+
+    <div id="dropZone" class="drop-zone">
+      <p id="dropText">📂 Drag & drop or click to upload (multiple allowed)</p>
+      <input type="file" id="files" accept="image/*" multiple hidden />
+    </div>
+
+    <div class="controls">
+      <label>Output format
+        <select id="outFormat">
+          <option value="auto">Auto (best)</option>
+          <option value="image/jpeg">JPG</option>
+          <option value="image/webp">WebP</option>
+          <option value="image/png">PNG</option>
+        </select>
+      </label>
+
+      <label>Quality <span id="qv">(80)</span>
+        <input id="quality" type="range" min="10" max="100" step="1" value="80"/>
+      </label>
+
+      <label>Max width/height (optional)
+        <div class="size-grid">
+          <input id="maxW" type="number" min="1" placeholder="Max width"/>
+          <input id="maxH" type="number" min="1" placeholder="Max height"/>
+        </div>
+      </label>
+    </div>
+
+    <div id="list" class="results"></div>
+
+    <div id="adPlaceholder" class="ad-placeholder">Your ad will appear here once approved.</div>
+  </div>
+
+  <footer class="sitefoot"><div class="wrap">
+    <small>© <span id="y"></span> Free Image Converter Tool</small>
+    <nav class="footnav"><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/contact.html">Contact</a></nav>
+  </div></footer>
+
+  <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+  <script src="/compress.js" defer></script>
+</body>
+</html>

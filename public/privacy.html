@@ -1,18 +1,46 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Privacy Policy</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Privacy Policy – Free Image Converter Tool</title>
+  <link rel="stylesheet" href="/styles.css"/>
 </head>
 <body>
-  <div class="container">
+  <div class="container" style="text-align:left;max-width:800px">
     <h1>Privacy Policy</h1>
-    <p>This site does not store your images. All image processing is done in-memory and temporarily.</p>
-    <p>We do not collect or share personal data.</p>
-    <p>By using this site, you agree to our terms and conditions.</p>
-    <a href="/">⬅️ Back to Home</a>
+    <p><em>Last updated: <span id="d"></span></em></p>
+
+    <h2>What this site does</h2>
+    <p>We provide simple image tools (convert, compress, resize). For many formats the processing happens in your browser. For formats your browser can’t export (e.g., HEIC/TIFF), we send the image to our server to convert it and then immediately return the result.</p>
+
+    <h2>Image processing & retention</h2>
+    <ul>
+      <li><strong>Browser‑only:</strong> JPG/PNG/WebP/AVIF conversions, compression, and resize are performed locally in your browser; files are not uploaded to our servers.</li>
+      <li><strong>Server‑assisted:</strong> For formats like HEIC/TIFF, your image is transmitted to our conversion API hosted on Render. Images are processed in memory or temporary storage solely for the conversion task and are not kept after the response is sent. We do not build profiles or use your images for any other purpose.</li>
+    </ul>
+
+    <h2>Analytics</h2>
+    <p>We use Google Analytics to understand aggregate usage (e.g., feature usage, countries, approximate device types). Google may set cookies and collect IP address and device data according to their policies. You can use browser tools or extensions to opt out.</p>
+
+    <h2>Advertising</h2>
+    <p>We use Google AdSense to show ads. Ad partners may use cookies or similar technologies to serve and measure ads. In regions that require consent, we will show a consent banner and respect your choices (personalized or non‑personalized ads).</p>
+
+    <h2>Cookies</h2>
+    <p>Cookies may be set by Google Analytics and AdSense. You can clear or block cookies in your browser settings. The site works without cookies, but analytics and ad personalization may be limited.</p>
+
+    <h2>Your choices</h2>
+    <ul>
+      <li>You may decline cookies/consent where prompted.</li>
+      <li>You can use the browser‑only tools if you prefer never to upload images.</li>
+      <li>You can contact us to ask questions or request deletion of any server‑side data, although we do not retain converted images after processing.</li>
+    </ul>
+
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:support@freeimageconvertertool.com">support@freeimageconvertertool.com</a></p>
+
+    <p><a href="/">⬅ Back to Home</a></p>
   </div>
+  <script>document.getElementById('d').textContent=new Date().toISOString().slice(0,10);</script>
 </body>
 </html>

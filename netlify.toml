@@ -1,0 +1,30 @@
+[build]
+  publish = "public"
+
+# Canonicalize apex -> www over HTTPS
+[[redirects]]
+  from = "/*"
+  to = "https://www.freeimageconvertertool.com/:splat"
+  status = 301
+  force = true
+  conditions = { Host = "freeimageconvertertool.com" }
+
+# Security headers (compatible with AdSense/GA)
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Frame-Options = "DENY"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+
+# Light caching for your static assets
+[[headers]]
+  for = "/styles.css"
+  [headers.values]
+    Cache-Control = "public, max-age=900"
+
+[[headers]]
+  for = "/script.js"
+  [headers.values]
+    Cache-Control = "public, max-age=300"

@@ -1,12 +1,25 @@
+:root{--w:980px;--gap:16px;}
+.wrap{max-width:var(--w);margin:0 auto;padding:12px var(--gap);}
+.topbar{border-bottom:1px solid #e5e7eb;background:#fff;position:sticky;top:0;z-index:5;}
+.brand{font-weight:700;text-decoration:none;margin-right:12px;}
+.nav a{margin-right:12px;text-decoration:none;color:#111;}
+.sitefoot{border-top:1px solid #e5e7eb;margin-top:32px;background:#fff;}
+.footnav a{margin-left:12px;color:#111;text-decoration:none;}
+.topbar { width: 100%; }     /* ensure full width */
+.container {                 /* add a little top margin below the sticky bar */
+  margin-top: 16px;
+}
+
 body {
   font-family: system-ui, sans-serif;
   background: #f4f6f8;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;   /* <-- add */
+  align-items: stretch;  
   min-height: 100vh;
   margin: 0;
 }
+
 
 .container {
   background: white;
