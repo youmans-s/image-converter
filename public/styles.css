@@ -130,3 +130,43 @@ button:hover{ filter:brightness(0.95); }
 .tool-card__desc{
   margin:10px 0 0; color:#333; font-size:.98rem;
 }
+
+/* === Animated aurora background (CSS-only) ============================= */
+:root{
+  /* Easy-to-tweak palette (feel free to change) */
+  --a1: #8ec5ff;   /* sky blue   */
+  --a2: #f8b4ff;   /* pink       */
+  --a3: #ffd166;   /* warm gold  */
+  --a4: #b9ffda;   /* mint       */
+}
+
+/* Put one big, blurred gradient layer behind everything */
+body::before{
+  content:"";
+  position:fixed; inset:-12% -12%;
+  z-index:-1;                           /* sits behind page content */
+  background:
+    radial-gradient(35% 55% at 15% 25%, var(--a1) 0%, transparent 60%),
+    radial-gradient(40% 60% at 85% 20%, var(--a2) 0%, transparent 60%),
+    radial-gradient(45% 65% at 25% 85%, var(--a3) 0%, transparent 60%),
+    radial-gradient(50% 70% at 80% 80%, var(--a4) 0%, transparent 60%);
+  filter: blur(60px) saturate(120%);
+  opacity: .6;
+  will-change: transform, filter;
+  animation: aurora-move 36s ease-in-out infinite alternate;
+  transform: translateZ(0);             /* GPU hint */
+}
+
+/* Gentle drift + subtle hue shift (Apple screensaver vibe) */
+@keyframes aurora-move{
+  0%   { transform: translate3d(0,0,0) scale(1.05) rotate(0deg);   filter: blur(60px) saturate(120%) hue-rotate(0deg); }
+  33%  { transform: translate3d(-2%, 1%, 0) scale(1.07) rotate(1deg); filter: blur(60px) saturate(125%) hue-rotate(18deg); }
+  66%  { transform: translate3d(2%, -1%,0) scale(1.06) rotate(-1deg); filter: blur(60px) saturate(130%) hue-rotate(32deg); }
+  100% { transform: translate3d(0,0,0) scale(1.05) rotate(0deg);   filter: blur(60px) saturate(120%) hue-rotate(0deg); }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce){
+  body::before{ animation:none; }
+}
+
