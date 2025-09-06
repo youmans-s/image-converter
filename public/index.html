@@ -18,34 +18,43 @@
   <header class="topbar">
     <div class="wrap">
       <!-- You asked to call this “Home” -->
-      <a class="brand" href="/">Home</a>
+      <a class="brand" href="/" aria-label="Home">
+        <img class="logo" src="/images/logo_bubbly_main.png" alt="Free Image Converter Tool">
+      </a>
     </div>
   </header>
 
   <section class="section">
     <div class="tool-grid tool-grid--big">
       <a class="tool-card" href="/converter.html">
-        <span class="tool-emoji" aria-hidden="true">🖼️</span>
-        <h3>Image Converter</h3>
-        <p>Convert JPG, PNG, WebP, AVIF.</p>
+        <h3 class="tool-card__title">Image Converter</h3>
+        <img class="tool-card__img" src="/images/image_converter.png"
+             alt="Convert JPG, PNG, WebP, AVIF" loading="lazy">
+        <p class="tool-card__desc">Convert JPG, PNG, WebP, AVIF.</p>
       </a>
+  
       <a class="tool-card" href="/compress.html">
-        <span class="tool-emoji" aria-hidden="true">🗜️</span>
-        <h3>Compress</h3>
-        <p>Shrink images while keeping quality.</p>
+        <h3 class="tool-card__title">Compress</h3>
+        <img class="tool-card__img" src="/images/compress.png"
+             alt="Compress images while keeping quality" loading="lazy">
+        <p class="tool-card__desc">Shrink images while keeping quality.</p>
       </a>
+  
       <a class="tool-card" href="/resize.html">
-        <span class="tool-emoji" aria-hidden="true">📏</span>
-        <h3>Resize</h3>
-        <p>Exact width/height or keep ratio.</p>
+        <h3 class="tool-card__title">Resize</h3>
+        <img class="tool-card__img" src="/images/resize.png"
+             alt="Resize images to exact width/height" loading="lazy">
+        <p class="tool-card__desc">Exact width/height or keep ratio.</p>
       </a>
+  
       <a class="tool-card" href="/heic-to-jpg.html">
-        <span class="tool-emoji" aria-hidden="true">📱</span>
-        <h3>HEIC → JPG</h3>
-        <p>iPhone photos to JPG in one step.</p>
+        <h3 class="tool-card__title">HEIC → JPG</h3>
+        <img class="tool-card__img" src="/images/heic_jpg.png"
+             alt="Convert iPhone HEIC photos to JPG" loading="lazy">
+        <p class="tool-card__desc">iPhone photos to JPG in one step.</p>
       </a>
     </div>
-  </section>
+  </section>  
 
   <!-- Keep the ad location on the home page -->
   <div class="ad-placeholder">Your ad will appear here once approved.</div>
