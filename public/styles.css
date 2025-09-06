@@ -1,26 +1,57 @@
+/* -------------------------------------------------
+   Base / theme
+--------------------------------------------------*/
 :root{
   --w:980px; --gap:16px;
-  --bg:#f8fbff;
-  --card:#ffffff;
-  --ink:#111;
-  --border:#e5e7eb;
+  --bg:#f8fbff; --card:#fff; --ink:#111; --border:#e5e7eb;
 }
 
-body{ background:var(--bg); }
+*{ box-sizing:border-box; }
+html,body{ height:100%; }
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  display:flex; flex-direction:column;
+}
+img{ max-width:100%; height:auto; display:block; }
+a{ color:inherit; text-decoration:none; }
 
-/* Section wrapper for wide content like the tool grid */
+/* Wrap for full-width header/footer sections */
+.wrap{ max-width:var(--w); margin:0 auto; padding:12px var(--gap); }
+
+/* -------------------------------------------------
+   Header / Footer
+--------------------------------------------------*/
+.topbar{
+  border-bottom:1px solid var(--border);
+  background:#fff; position:sticky; top:0; z-index:5;
+}
+.brand{ font-weight:700; color:inherit; display:inline-block; padding:10px 0; }
+
+.sitefoot{ border-top:1px solid var(--border); background:#fff; margin-top:24px; }
+.sitefoot .wrap{ display:flex; align-items:center; justify-content:space-between; }
+.footnav a{ margin-left:12px; }
+
+/* -------------------------------------------------
+   Home grid (2×2, bigger cards)
+--------------------------------------------------*/
 .section{ max-width:var(--w); margin:0 auto; padding:24px var(--gap); }
 
-/* Tool grid (“quadrants”) */
-.tool-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px; }
+.tool-grid{ display:grid; grid-template-columns:1fr; gap:20px; }
+@media (min-width:780px){ .tool-grid{ grid-template-columns:repeat(2,minmax(320px,1fr)); } }
+.tool-grid--big .tool-card{ min-height:190px; }
+
 .tool-card{
-  display:block; background:var(--card); color:var(--ink); text-decoration:none;
-  padding:20px; border:1px solid var(--border); border-radius:16px;
-  box-shadow:0 2px 10px rgba(0,0,0,.04);
+  display:block; background:var(--card); color:var(--ink);
+  padding:24px; border:1px solid var(--border); border-radius:18px;
+  box-shadow:0 2px 10px rgba(0,0,0,.06);
   transition:transform .12s ease, box-shadow .12s ease;
 }
-.tool-card:hover{ transform:translateY(-2px); box-shadow:0 6px 18px rgba(0,0,0,.08); }
-.tool-emoji{ font-size:28px; display:block; margin-bottom:8px; }
+.tool-card:hover{ transform:translateY(-2px); box-shadow:0 10px 22px rgba(0,0,0,.10); }
+.tool-emoji{ font-size:30px; margin-bottom:10px; }
+.tool-card h3{ margin:6px 0; }
 
 /* Soft pastel backgrounds per card */
 .tool-card:nth-child(1){ background:linear-gradient(180deg,#fff,#f5f9ff); }
@@ -28,7 +59,50 @@ body{ background:var(--bg); }
 .tool-card:nth-child(3){ background:linear-gradient(180deg,#fff,#f6fff8); }
 .tool-card:nth-child(4){ background:linear-gradient(180deg,#fff,#fff4fa); }
 
-.visually-hidden{ position:absolute; left:-10000px; width:1px; height:1px; overflow:hidden; }
+.ad-placeholder{
+  max-width:var(--w); margin:24px auto; padding:16px;
+  border:1px dashed #aaa; background:#fff; text-align:center; border-radius:12px;
+}
 
-/* Optional logo */
-.logo{ width:24px; height:24px; vertical-align:middle; margin-right:8px; }
+/* -------------------------------------------------
+   Tool pages (converter / compress / resize / heic)
+--------------------------------------------------*/
+.container{
+  background:var(--card);
+  padding:28px 32px;
+  border-radius:14px;
+  box-shadow:0 5px 30px rgba(0,0,0,.05);
+  max-width:640px; width:calc(100% - 2*var(--gap));
+  margin:16px auto;
+  text-align:center;
+}
+
+/* Drop zone */
+.drop-zone{
+  border:2px dashed #bbb; padding:30px; cursor:pointer; margin:20px 0;
+  border-radius:10px; background:#f9f9f9; transition:background .2s ease;
+}
+.drop-zone.dragover{ background:#e0f0ff; }
+
+/* Controls */
+.controls{ text-align:left; display:grid; gap:12px; margin-bottom:12px; }
+.size-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:12px; }
+select, input[type="number"], input[type="range"], button{
+  width:100%; font:inherit; padding:10px; border-radius:8px; border:1px solid #ccc;
+}
+button{ background:#111; color:#fff; cursor:pointer; }
+button:hover{ filter:brightness(0.95); }
+
+/* Results / cards */
+.results{ display:grid; gap:12px; margin-top:12px; text-align:left; }
+.card{
+  background:#fff; border:1px solid var(--border); border-radius:12px; padding:12px;
+}
+.card .meta{ color:#666; font-size:.9rem; }
+.preview{
+  max-height:240px; object-fit:contain; border-radius:6px;
+  box-shadow:0 1px 6px rgba(0,0,0,.06); margin:8px 0;
+}
+
+/* Utility */
+.visually-hidden{ position:absolute; left:-10000px; width:1px; height:1px; overflow:hidden; }

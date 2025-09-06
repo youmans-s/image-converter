@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>Free Image Converter Tool – Convert JPG, PNG, WebP, AVIF, HEIC, TIFF</title>
-  <meta name="description" content="Fast, free image tools: convert, compress, resize, and HEIC to JPG. Private by design."/>
+  <title>Free Image Converter Tool – Simple, fast image tools</title>
+  <meta name="description" content="Free image tools that are easy to use: convert, compress, resize, and HEIC to JPG. Private by design."/>
   <link rel="canonical" href="https://www.freeimageconvertertool.com/"/>
 
   <!-- AdSense + GA -->
@@ -17,28 +17,14 @@
 <body>
   <header class="topbar">
     <div class="wrap">
-      <a class="brand" href="/">
-        <!-- Optional logo -->
-        <!-- <img src="/logo.svg" alt="" class="logo"> -->
-        Free Image Converter Tool
-      </a>
-      <nav class="nav">
-        <a href="/" class="cta" aria-current="page">Image Converter</a>
-        <a href="/compress.html">Compress</a>
-        <a href="/resize.html">Resize</a>
-        <a href="/heic-to-jpg.html">HEIC → JPG</a>
-        <a href="/privacy.html">Privacy</a>
-        <a href="/terms.html">Terms</a>
-        <a href="/contact.html">Contact</a>
-      </nav>
+      <!-- You asked to call this “Home” -->
+      <a class="brand" href="/">Home</a>
     </div>
   </header>
 
-  <!-- 2×2 “quadrants” -->
   <section class="section">
-    <h2 class="visually-hidden">Tools</h2>
-    <div class="tool-grid">
-      <a class="tool-card" href="/">
+    <div class="tool-grid tool-grid--big">
+      <a class="tool-card" href="/converter.html">
         <span class="tool-emoji" aria-hidden="true">🖼️</span>
         <h3>Image Converter</h3>
         <p>Convert JPG, PNG, WebP, AVIF.</p>
@@ -61,32 +47,8 @@
     </div>
   </section>
 
+  <!-- Keep the ad location on the home page -->
   <div class="ad-placeholder">Your ad will appear here once approved.</div>
-
-  <!-- Main converter UI -->
-  <div class="container">
-    <h1>🖼️ Image Converter</h1>
-    <p>Convert PNG, JPG, WebP images instantly. Just upload or drag and drop.</p>
-
-    <div id="dropZone" class="drop-zone">
-      <p id="dropText">📂 Drag & Drop or Click to Upload</p>
-      <img id="previewImage" src="" alt="Preview" style="display:none;" />
-      <input type="file" id="imageInput" accept="image/*" hidden />
-    </div>
-
-    <label for="formatSelect">Convert to:</label>
-    <select id="formatSelect">
-      <option value="image/jpeg">JPG</option>
-      <option value="image/png">PNG</option>
-      <option value="image/webp">WebP</option>
-      <option value="avif">AVIF</option>
-      <option value="tiff">TIFF</option>
-    </select>
-
-    <div class="ad-placeholder" style="margin-top:16px">Your ad will appear here once approved by Google.</div>
-
-    <a id="downloadLink" style="display:none;" download>⬇️ Download Converted Image</a>
-  </div>
 
   <footer class="sitefoot">
     <div class="wrap">
@@ -98,21 +60,6 @@
       </nav>
     </div>
   </footer>
-
   <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
-  <script src="/script.js"></script>
-
-  <!-- Home FAQ (JSON-LD) -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"FAQPage",
-    "mainEntity":[
-      {"@type":"Question","name":"Are my images uploaded?","acceptedAnswer":{"@type":"Answer","text":"Most conversions run in your browser. HEIC/TIFF may be sent to our server only for conversion and are not retained after processing."}},
-      {"@type":"Question","name":"What formats can I convert?","acceptedAnswer":{"@type":"Answer","text":"JPG, PNG, WebP, and AVIF. Availability depends on your browser’s export support."}},
-      {"@type":"Question","name":"Is this free?","acceptedAnswer":{"@type":"Answer","text":"Yes—ads support hosting so the tools can stay free."}}
-    ]
-  }
-  </script>
 </body>
 </html>
